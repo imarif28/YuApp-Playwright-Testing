@@ -1,0 +1,22 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {await page.goto('https://eva.noretest.com/');
+await page.getByRole('textbox', { name: 'Username' }).click();
+await page.getByRole('textbox', { name: 'Username' }).fill('IlhamYuAPP');
+await page.getByRole('textbox', { name: 'Password' }).click();
+await page.getByRole('textbox', { name: 'Password' }).fill('IlhamYuAPP');
+await page.getByRole('button', { name: 'Sign in ' }).click();
+await page.getByRole('link', { name: ' Tracking ' }).click();
+await page.waitForLoadState('networkidle');
+await page.getByRole('link', { name: ' Unstuffing Indonesia' }).click();
+await page.getByRole('link', { name: 'UNSTUFFING CARTON ' }).click();
+await page.getByRole('combobox', { name: '--Destination Port--' }).click();
+await page.getByRole('treeitem', { name: '(Direct)' }).click();
+await page.waitForLoadState('networkidle');
+await page.getByRole('combobox', { name: '--No. Container--' }).click();
+await page.getByRole('treeitem', { name: 'COLOAD' }).click();
+await page.getByRole('button', { name: 'Submit ' }).click();
+await page.getByRole('button', { name: 'Move All To Warehouse' }).click();
+await page.getByRole('button', { name: 'Pindah Semua' }).click();
+await expect(page.getByRole('heading', { name: 'Success' })).toBeVisible();
+});
